@@ -13,35 +13,49 @@ public class Quiz {
     };
 
 
-
-    private static int score = 0;
+    public  int score = 0;
     private static List<Integer> indexArr = new ArrayList<>();
 
     private static int[] answers = {9, 8, 36, 13, 32};
 
-    public static String getQuestions(int i) {
+    public String getQuestions(int i) {
         return questions[i];
     }
 
-    public static String[] getQuestions() {
+    public  String[] getQuestions() {
         return questions;
     }
 
-    public static int getScore() {
+    public  int getScore() {
         return score;
     }
 
-    public static List<Integer> getIndexArr() {
+    public  List<Integer> getIndexArr() {
         return indexArr;
     }
 
-    public static int[] getAnswers() {
+    public  int[] getAnswers() {
         return answers;
     }
 
-    public static int getNum(){
+    public  int getNum(){
+
+        if(indexArr.size()-1 == 4) {
+            indexArr.clear();
+            return -1;
+        }
+
         Random rand = new Random();
-        return rand.nextInt(4);
+
+        int qIndex = rand.nextInt(questions.length);
+
+        while (indexArr.contains(qIndex)){
+            qIndex = rand.nextInt(questions.length);
+
+        }
+
+        indexArr.add(qIndex);
+        return qIndex;
 
     }
 }
