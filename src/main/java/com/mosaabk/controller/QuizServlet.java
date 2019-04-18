@@ -1,12 +1,12 @@
+package com.mosaabk.controller;
+
+import com.mosaabk.model.Quiz;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 
 @WebServlet("/")
@@ -93,7 +93,7 @@ public class QuizServlet extends HttpServlet {
 
             response.addCookie(index);
 
-            out.println("<h1>The Number Quiz</h1>" +
+            out.println("<h1>The Number com.mosaabk.model.Quiz</h1>" +
                     "Your Current Score is : 0 "  +
                     "</br> Guess the next number in the Sequence.</br>"+ quizQ+
                     "<form action='quiz' method='post'>"+
